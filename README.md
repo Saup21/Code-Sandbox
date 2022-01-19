@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+## The idea of the project is to Create a HTML,CSS,Js Sandbox :)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
