@@ -1,0 +1,14 @@
+.flexbox {
+    display: flex;
+    flex-direction: row;
+}
+
+#display {
+    width: 37vw;
+    height: 80vh;
+}
+
+#editor {
+    width: 59vw;
+    height: 80vh;
+}
