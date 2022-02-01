@@ -1,42 +1,37 @@
-import React, {useState, useEffect} from 'react';
-import './Editor.css'
+import React, { useState } from 'react';
+import '../App.css'
 
-function Editor() {
-
-    const [value, setValue] = useState(`<h1>
-Welcome to Code-Sandbox 
-</h1>
-<h3>
-    Hello! This is a HTML/CSS/JS playground!
-</h3>
-<ul>
-    <li>You can create a html/css/js project here</li>
-    <li>Feel free to use it as your local development environment</li>
-    <li>Customize your code in whatever way you like</li>
-    <li>Code-Sandbox is awesome! And hope you would love to use it!</li>
-</ul>
-    `);
-
+function Editor(props) {
+    const { size } = props;
+    const starter_template = `<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+    <body>
+    
+    </body>
+</html>`
+    const [value, setValue] = useState(starter_template);
     return (
-        <div>
-            <div className='flex-box'>
-                <textarea 
-                    name="html" 
-                    id="editor" 
-                    cols="10" 
-                    rows="10"
-                    value={value}
-                    onChange={(event) => { setValue(event.target.value) }}
-                >
-                </textarea>
-                <iframe
-                    id='display'
-                    srcDoc={value}
-                    title="output" 
-                    sandbox="allow-scripts" 
-                    frameBorder="0" 
-                /> 
-            </div>
+        <div className='flex-box'>
+            <textarea
+                name="html"
+                id="editor"
+                style={{fontSize: size}}
+                value={value}
+                onChange={(event) => { setValue(event.target.value) }}
+            >
+            </textarea>
+            <iframe
+                id='display'
+                srcDoc={value}
+                sandbox="allow-same-origin allow-scripts"
+                frameBorder="0"
+            />
         </div>
     )
 }
