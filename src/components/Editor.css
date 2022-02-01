@@ -1,8 +1,10 @@
-.flexbox {
+.flex-box {
     display: flex;
     flex-direction: row;
 }
-
+.preview{
+    width:40vw;
+}
 #display {
     width: 37vw;
     height: 80vh;
